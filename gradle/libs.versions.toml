@@ -3,28 +3,26 @@ agp = "8.2.2"
 android-compileSdk = "34"
 android-minSdk = "24"
 android-targetSdk = "34"
-androidx-activityCompose = "1.8.2"
+androidx-activityCompose = "1.9.0"
 androidx-appcompat = "1.6.1"
 androidx-constraintlayout = "2.1.4"
-androidx-core-ktx = "1.12.0"
+androidx-core-ktx = "1.13.1"
 androidx-espresso-core = "3.5.1"
-androidx-material = "1.11.0"
+androidx-material = "1.12.0"
 androidx-test-junit = "1.1.5"
-compose = "1.6.4"
-compose-plugin = "1.6.0-rc02"
+compose = "1.6.7"
+compose-plugin = "1.6.10"
 junit = "4.13.2"
-kotlin = "1.9.21"
-kotlinxDatetime = "0.4.0"
-voyager = "1.0.0-rc10"
+kotlin = "2.0.0-RC2"
+kotlinxDatetime = "0.5.0"
 ktor = "2.3.7"
-coroutines = "1.7.3"
+coroutines = "1.8.0"
 json = "1.6.2"
 koin = "3.5.3"
 koin-compose = "1.1.2"
 koin-bom = "3.5.3"
 moko-mvvm = "0.16.1"
 kamel = "0.9.1"
-uiToolingPreviewAndroid = "1.6.0"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -41,9 +39,6 @@ compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose"}
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDatetime" }
-voyager-navigator = { module = "cafe.adriel.voyager:voyager-navigator", version.ref = "voyager" }
-voyager-transitions = { module = "cafe.adriel.voyager:voyager-transitions", version.ref = "voyager" }
-voyager-tabNavigator = { module = "cafe.adriel.voyager:voyager-tab-navigator", version.ref = "voyager" }
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
 ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
@@ -66,3 +61,4 @@ androidLibrary = { id = "com.android.library", version.ref = "agp" }
 jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
