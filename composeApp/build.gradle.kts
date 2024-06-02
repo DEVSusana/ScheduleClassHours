@@ -6,6 +6,8 @@ plugins {
     alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.kotlinSerialization)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.room)
+    alias(libs.plugins.ksp)
 }
 
 kotlin {
@@ -28,35 +30,56 @@ kotlin {
             isStatic = true
         }
     }
+
+    sourceSets.all {
+        languageSettings.optIn("kotlin.experimental.ExperimentalObjCName")
+    }
     
     sourceSets {
 
         androidMain.dependencies {
+            //Compose
             implementation(libs.compose.ui)
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
+            //Server
             implementation(libs.ktor.client.okhttp)
+            //Coroutines
             implementation(libs.kotlinx.coroutines.android)
+            //Dependencies injection
             implementation(libs.koin.android)
+
+            implementation(libs.androidx.room.paging)
         }
         commonMain.dependencies {
+            //compose
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material3)
             implementation(compose.ui)
             implementation(compose.components.resources)
+            //Server
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.negotiation)
             implementation(libs.ktor.client.logging)
             implementation(libs.ktor.serialization)
+            //Coroutines
             implementation(libs.kotlinx.coroutines.core)
+            //Json
             implementation(libs.kotlin.json.serialization)
+            //Dependencies injection Koin
             implementation(project.dependencies.platform(libs.koin.bom))
             implementation(libs.koin.compose)
             api(libs.koin.core)
-            implementation(libs.moko.mvvm)
+            //Other
             implementation(libs.kotlinx.datetime)
-            implementation(libs.kamel.image.loader)
+            implementation(libs.androidx.paging.common)
+            implementation(libs.androidx.room.runtime)
+            implementation(libs.sqlite.bundled)
+            implementation(libs.okio)
+            implementation(libs.coil.compose)
+            implementation(libs.coil.compose.ktor)
+
         }
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
@@ -98,6 +121,22 @@ android {
     }
     dependencies {
         debugImplementation(compose.uiTooling)
+        implementation(libs.androidx.viewmodel.compose)
+        implementation(libs.navigation.compose)
+    }
+}
+
+room {
+    schemaDirectory("$projectDir/schemas")
+}
+dependencies {
+    add("kspCommonMainMetadata", libs.androidx.room.compiler)
+}
+
+
+tasks.withType<org.jetbrains.kotlin.gradle.dsl.KotlinCompile<*>>().configureEach {
+    if (name != "kspCommonMainKotlinMetadata" ) {
+        dependsOn("kspCommonMainKotlinMetadata")
     }
 }
 

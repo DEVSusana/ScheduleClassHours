@@ -12,12 +12,12 @@ class AndroidApp: Application() {
         startKoin {
             androidContext(this@AndroidApp)
             androidLogger()
-            modules(
+          //  modules(
 //                NetModule,
 //                RepositoryModule,
 //                UseCaseModule,
 //                ViewModelModule
-            )
+       //     )
         }
     }
 }
