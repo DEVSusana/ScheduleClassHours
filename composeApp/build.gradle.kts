@@ -34,7 +34,10 @@ kotlin {
     sourceSets.all {
         languageSettings.optIn("kotlin.experimental.ExperimentalObjCName")
     }
-    
+    sourceSets.commonMain {
+        kotlin.srcDir("build/generated/ksp/metadata")
+    }
+
     sourceSets {
 
         androidMain.dependencies {
@@ -85,6 +88,7 @@ kotlin {
             implementation(libs.ktor.client.darwin)
         }
     }
+    task("testClasses")
 }
 
 android {
@@ -121,8 +125,6 @@ android {
     }
     dependencies {
         debugImplementation(compose.uiTooling)
-        implementation(libs.androidx.viewmodel.compose)
-        implementation(libs.navigation.compose)
     }
 }
 
@@ -130,6 +132,10 @@ room {
     schemaDirectory("$projectDir/schemas")
 }
 dependencies {
+    implementation(libs.androidx.viewmodel.compose)
+    implementation(libs.navigation.compose)
+    implementation(libs.androidx.lifecycle.viewmodel.android)
+    implementation(libs.androidx.adapters)
     add("kspCommonMainMetadata", libs.androidx.room.compiler)
 }
 

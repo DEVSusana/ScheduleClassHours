@@ -6,7 +6,7 @@ android-targetSdk = "34"
 androidx-paging = "3.3.0"
 androidx-room = "2.7.0-alpha03"
 androidx-viewmodelCompose = "2.8.1"
-ksp = "1.9.23-1.0.19"
+ksp = "2.0.0-1.0.21"
 androidx-activityCompose = "1.9.0"
 androidx-core-ktx = "1.13.1"
 androidx-espresso-core = "3.5.1"
@@ -25,7 +25,9 @@ koin-bom = "3.5.3"
 coil-compose = "3.0.0-alpha06"
 navigationCompose = "2.7.0-alpha07"
 pagingComposeAndroid = "3.3.0"
-sqlite = "2.5.0-SNAPSHOT"
+sqlite = "2.5.0-alpha03"
+lifecycleViewmodelAndroid = "2.8.1"
+adapters = "3.2.0-alpha11"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -61,9 +63,11 @@ androidx-room-paging = { group = "androidx.room", name = "room-paging", version.
 androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "androidx-room" }
 androidx-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "androidx-viewmodelCompose" }
 okio = "com.squareup.okio:okio:3.9.0"
-sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "sqlite" }
+sqlite-bundled = { group = "androidx.sqlite", name = "sqlite-bundled", version.ref = "sqlite" }
 coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil-compose"}
 coil-compose-ktor = { module = "io.coil-kt.coil3:coil-network-ktor", version.ref = "coil-compose"}
+androidx-lifecycle-viewmodel-android = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-android", version.ref = "lifecycleViewmodelAndroid" }
+androidx-adapters = { group = "androidx.databinding", name = "adapters", version.ref = "adapters" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
