@@ -83,6 +83,7 @@ kotlin {
             implementation(libs.coil.compose)
             implementation(libs.coil.compose.ktor)
 
+
         }
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
