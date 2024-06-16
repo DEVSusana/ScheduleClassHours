@@ -19,9 +19,8 @@ kotlinxDatetime = "0.6.0-RC.2"
 ktor = "2.3.8"
 coroutines = "1.8.0"
 json = "1.6.3"
-koin = "3.5.3"
-koin-compose = "1.1.2"
-koin-bom = "3.5.3"
+koin = "3.6.0-Beta4"
+koin-compose = "1.2.0-Beta4"
 coil-compose = "3.0.0-alpha06"
 navigationCompose = "2.7.0-alpha07"
 pagingComposeAndroid = "3.3.0"
@@ -53,7 +52,8 @@ kotlin-json-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serializat
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koin-compose" }
-koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koin-bom" }
+koin-compose-viewmodel = { group = "io.insert-koin", name = "koin-compose-viewmodel", version.ref = "koin-compose"}
+koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koin" }
 navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
 androidx-paging-common = { module = "androidx.paging:paging-common", version.ref = "androidx-paging" }
 androidx-paging-compose-android = { group = "androidx.paging", name = "paging-compose-android", version.ref = "pagingComposeAndroid" }

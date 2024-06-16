@@ -72,8 +72,9 @@ kotlin {
             implementation(libs.kotlin.json.serialization)
             //Dependencies injection Koin
             implementation(project.dependencies.platform(libs.koin.bom))
+            implementation(libs.koin.core)
             implementation(libs.koin.compose)
-            api(libs.koin.core)
+            implementation(libs.koin.compose.viewmodel)
             //Other
             implementation(libs.kotlinx.datetime)
             implementation(libs.androidx.paging.common)
