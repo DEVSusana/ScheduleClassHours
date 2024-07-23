@@ -1,3 +1,6 @@
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
 
 
 plugins {
@@ -12,10 +15,9 @@ plugins {
 
 kotlin {
     androidTarget {
-        compilations.all {
-            kotlinOptions {
-                jvmTarget = "17"
-            }
+        @OptIn(ExperimentalKotlinGradlePluginApi::class)
+        compilerOptions {
+            jvmTarget.set(JvmTarget.JVM_17)
         }
     }
 
@@ -26,8 +28,11 @@ kotlin {
         iosSimulatorArm64()
     ).forEach { iosTarget ->
         iosTarget.binaries.framework {
-            baseName = "ComposeApp"
+            baseName = "composeApp"
             isStatic = true
+        }
+        iosTarget.compilations.getByName("main") {
+            kotlinOptions.freeCompilerArgs += "-Xbinary=bundleId=com.susanadev.scheduleclasshours"
         }
     }
 
@@ -133,6 +138,7 @@ android {
 room {
     schemaDirectory("$projectDir/schemas")
 }
+
 dependencies {
     implementation(libs.androidx.viewmodel.compose)
     implementation(libs.navigation.compose)
@@ -142,7 +148,7 @@ dependencies {
 }
 
 
-tasks.withType<org.jetbrains.kotlin.gradle.dsl.KotlinCompile<*>>().configureEach {
+tasks.withType<KotlinCompilationTask<*>>().configureEach {
     if (name != "kspCommonMainKotlinMetadata" ) {
         dependsOn("kspCommonMainKotlinMetadata")
     }
