@@ -1,13 +1,14 @@
-ruby
+
 Pod::Spec.new do |s|
   s.name             = 'composeApp'
   s.version          = '1.0.0'
   s.summary          = 'Módulo compartido de Kotlin para ScheduleClassHours.'
-  s.description      = <<-DESCEste módulo contiene código compartido de Kotlin para la aplicación ScheduleClassHours, incluyendo lógica de negocio, acceso a datos y componentes de interfaz de usuario basados en Jetpack Compose.
+  s.description      = <<-DESC
+  Este módulo contiene código compartido de Kotlin para la aplicación ScheduleClassHours, incluyendo lógica de negocio, acceso a datos y componentes de interfaz de usuario basados en Jetpack Compose.
                        DESC
   s.homepage         = 'https://github.com/DEVSusana/ScheduleClassHours'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Tu Nombre' => 'susanacordobaserrano@gmail.com' }
+  s.author           = { 'Susana' => 'susanacordobaserrano@gmail.com' }
   s.source           = { :git => 'https://github.com/DEVSusana/ScheduleClassHours', :tag => s.version.to_s }
   s.ios.deployment_target = '15.0'
 

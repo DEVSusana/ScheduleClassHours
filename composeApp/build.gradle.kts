@@ -100,7 +100,7 @@ kotlin {
 
 android {
     namespace = "com.susanadev.scheduleclasshours"
-    compileSdk = libs.versions.android.compileSdk.get().toInt()
+    compileSdk = 34
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     sourceSets["main"].res.srcDirs("src/androidMain/res")
@@ -130,6 +130,7 @@ android {
     buildFeatures {
         compose = true
     }
+    buildToolsVersion = "34.0.0"
     dependencies {
         debugImplementation(compose.uiTooling)
     }
