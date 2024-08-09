@@ -148,10 +148,10 @@ dependencies {
     add("kspCommonMainMetadata", libs.androidx.room.compiler)
 }
 
-
 tasks.withType<KotlinCompilationTask<*>>().configureEach {
-    if (name != "kspCommonMainKotlinMetadata" ) {
+    if (name != "kspCommonMainKotlinMetadata") {
         dependsOn("kspCommonMainKotlinMetadata")
     }
 }
+
 
