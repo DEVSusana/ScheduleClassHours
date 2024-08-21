@@ -5,11 +5,11 @@
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=devsusana" alt="devsusana" /></a> </p>
 
-- 🔭 I’m currently working on [RickyMorty](https://github.com/DEVSusana/RickyMorty)
+- 🔭 I’m currently working on [ScheduleClassHours](https://github.com/DEVSusana/ScheduleClassHours)
 
 - 👨‍💻 All of my projects are available at [https://github.com/DEVSusana?tab=repositories](https://github.com/DEVSusana?tab=repositories)
 
-- 💬 Ask me about **Kotlin, Java, XML**
+- 💬 Ask me about **Kotlin, Java, XML, Jetpack Compose**
 
 - 📫 How to reach me **susanacordobaserrano@gmail.com**
 
