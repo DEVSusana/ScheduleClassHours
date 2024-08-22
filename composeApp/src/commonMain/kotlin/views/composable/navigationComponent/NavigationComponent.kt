@@ -1,10 +1,11 @@
-package views.composable
+package views.composable.navigationComponent
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import presentation.viewmodel.StudentViewModel
+import views.composable.splash.SplashScreen
 
 @Composable
 fun NavigationComponent(
@@ -13,10 +14,10 @@ fun NavigationComponent(
 ){
     NavHost(
         navController = navController,
-        startDestination = "splash"
+        startDestination = DestinationScreen.SplashScreenDest.route
     ) {
-        composable("splash") {
-            //SplashScreen()
+        composable(DestinationScreen.SplashScreenDest.route) {
+            SplashScreen(navController)
         }
 
     }

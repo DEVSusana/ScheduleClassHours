@@ -27,6 +27,7 @@ pagingComposeAndroid = "3.3.0"
 sqlite = "2.5.0-alpha05"
 lifecycleViewmodelAndroid = "2.8.3"
 adapters = "3.2.0-alpha11"
+coreAnimation = "1.0.0"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
