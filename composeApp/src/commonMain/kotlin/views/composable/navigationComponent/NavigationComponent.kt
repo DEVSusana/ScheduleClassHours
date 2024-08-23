@@ -17,7 +17,7 @@ fun NavigationComponent(
         startDestination = DestinationScreen.SplashScreenDest.route
     ) {
         composable(DestinationScreen.SplashScreenDest.route) {
-            SplashScreen(navController)
+            SplashScreen(navController) //TODO pending delete the native splash in both platform
         }
 
     }
